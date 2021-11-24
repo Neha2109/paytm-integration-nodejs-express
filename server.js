@@ -18,6 +18,7 @@ app.use(express.static(__dirname + "/views"));
 app.set("view engine", "ejs");
 
 app.get("/paywithpaytm", (req, res) => {
+    console.log(req.query)
     initPayment(req.query.amount).then(
         success => {
             res.render("paytmRedirect.ejs", {
